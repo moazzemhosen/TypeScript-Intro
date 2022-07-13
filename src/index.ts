@@ -107,7 +107,25 @@ interface Admin {
     role: string;
 }
 
-function useroradmin() {
+function useroradmin( obj:User | Admin) {
+  return obj.type
+}
+
+
+const InputUser: User = {
+  type: 'user',
+    name: "user",
+    age: 10,
+    occupation: "engineering"
   
 }
-console.log();
+const InputUser1: Admin = {
+ type: 'admin',
+    name: "admin",
+    age: 20,
+    role: "developer"
+  
+}
+
+console.log(useroradmin(InputUser));
+console.log(useroradmin(InputUser));
